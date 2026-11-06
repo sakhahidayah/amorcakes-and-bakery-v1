@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+:root {
+  --espresso-walnut: #3e271e;
+  --warm-amber-gold: #c28448;
+  --roasted-cinnamon: #8c4e2d;
+  --berry-glaze: #b83a4b;
+  --warm-flour-cream: #fdfbf7;
+  --oat-linen: #f4ede4;
+  --almond-cream: #ece3d4;
+  --dark-roast: #2a1810;
+  --dark-espresso: #2c1e16;
+  --pure-white: #ffffff;
+}
+
+@theme inline {
+  --color-espresso-walnut: var(--espresso-walnut);
+  --color-warm-amber-gold: var(--warm-amber-gold);
+  --color-roasted-cinnamon: var(--roasted-cinnamon);
+  --color-berry-glaze: var(--berry-glaze);
+  --color-warm-flour-cream: var(--warm-flour-cream);
+  --color-oat-linen: var(--oat-linen);
+  --color-almond-cream: var(--almond-cream);
+  --color-dark-roast: var(--dark-roast);
+  --color-dark-espresso: var(--dark-espresso);
+  --color-pure-white: var(--pure-white);
+  --color-background: var(--warm-flour-cream);
+  --color-foreground: var(--dark-roast);
+  --color-text-primary: var(--dark-espresso);
+  --color-text-inverted: var(--pure-white);
+  --font-display: var(--font-cormorant);
+  --font-sans: var(--font-jakarta);
+  --container-content: 75rem;
+}
+
+* {
+  border-color: color-mix(in srgb, var(--espresso-walnut) 16%, transparent);
+}
+
+body {
+  min-width: 320px;
+  background: var(--warm-flour-cream);
+  color: var(--dark-espresso);
+  font-family: var(--font-jakarta), sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-cormorant), serif;
+  color: var(--espresso-walnut);
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2.25rem, 5vw, 3rem);
+  line-height: 1.17;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  line-height: 1.22;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  line-height: 1.33;
+}
+
+.section-padding {
+  padding-block: 3rem;
+}
+
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 6rem;
+  }
+
+  .section-padding {
+    padding-block: 5rem;
+  }
+}
+
+::selection {
+  background: var(--almond-cream);
+  color: var(--dark-roast);
+}
+
+:focus-visible {
+  outline: 3px solid var(--warm-amber-gold);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
